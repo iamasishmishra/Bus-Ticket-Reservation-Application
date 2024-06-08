@@ -1,0 +1,72 @@
+.adminloginpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.adminloginpage .gif img{
+  height: 360px;
+  width: 480px;
+  position: relative;
+  right: 20%;
+  border-radius: 13px;
+}
+.adminloginpage form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+
+.adminloginpage form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.adminloginpage form input[type="email"],
+.adminloginpage form input[type="password"] {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+
+.adminloginpage form input[type="email"]:focus,
+.adminloginpage form input[type="password"]:focus {
+  border-color: #5151e5;
+  outline: none;
+}
+
+
+.adminloginpage form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: #5151e5;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.adminloginpage form button:hover {
+  background: #333;
+}
+
+
+.adminloginpage form p {
+  margin-top: 10px;
+  text-align: center;
+}

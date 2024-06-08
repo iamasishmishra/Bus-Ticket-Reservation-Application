@@ -1,0 +1,95 @@
+
+.adminsignup {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container for the admin signup form */
+.adminsignup {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 360px;
+
+  /* height: 300px; */
+  position: relative;
+
+  /* width: 180%; */
+
+    position: relative;
+    right: 7%;
+}
+
+/* Styling for the form */
+.adminsignup form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Styling for labels */
+.adminsignup form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Styling for input fields */
+.adminsignup form input[type="text"],
+.adminsignup form input[type="email"],
+.adminsignup form input[type="tel"],
+.adminsignup form input[type="password"] {
+  padding: 10px; /* Increased padding for better appearance */
+  margin-bottom: 12px; /* Increased margin for better spacing */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  height: 35px;
+  width: 300px;
+}
+
+/* Change border color on focus */
+.adminsignup form input[type="text"]:focus,
+.adminsignup form input[type="email"]:focus,
+.adminsignup form input[type="tel"]:focus,
+.adminsignup form input[type="password"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Placeholder styling */
+.adminsignup form input::placeholder {
+  color: #999;
+}
+
+/* Styling for the button */
+.adminsignup form button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 300px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Change background color on hover */
+.adminsignup form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Active state for the button */
+.adminsignup form button:active {
+  background-color: #004494;
+  transform: translateY(0);
+}

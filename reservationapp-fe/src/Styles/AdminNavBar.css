@@ -1,0 +1,20 @@
+.adminnavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #5151e5 10%, #72edf2 100%);
+    padding: 0px 50px;
+    height: 64px;
+}
+
+
+/* #72edf2 */
+.adminnavbar .logo h2{
+    color: white;
+}
+
+.adminnavbar .logo img{
+    height: 30px;
+    width: 40px;
+    margin-right: 10px;
+}

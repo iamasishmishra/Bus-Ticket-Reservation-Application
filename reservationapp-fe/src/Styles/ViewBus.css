@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.viewbuslist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.maincontent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    width: 70%;
+}
+
+.busdetails {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 130%;
+    position: relative;
+    right: 15%;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.busdetails:hover {
+    transform: scale(1.01);
+}
+
+.bus-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bus-info span, .bus-info button {
+    margin: 5px 10px;
+    color: #333;
+    width: 67px;
+    
+}
+
+.bus-info .bus-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bus-info .bus-seats, 
+.bus-info .bus-from, 
+.bus-info .bus-to, 
+.bus-info .bus-date {
+    font-size: 16px;
+    color: #666;
+}
+
+.bus-info .bus-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bus-info .bus-button:hover {
+    background-color: #0056b3;
+}
+
+.viewbuslist h2 {
+    color: #076bd7;
+}
+
+.busdetails .bus-info .bus-name {
+    color: #076bd7;
+}
+
+.busdetails .bus-info .bus-name p{
+    color: black;
+}
+
+.bus-name h6{
+    color: #666;
+}
+
+.maincontent .busdetails .bus-info .seat b{
+    color: green;
+}
