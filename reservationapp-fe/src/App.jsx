@@ -10,6 +10,8 @@ import UserSignUp from './Components/User/UserSignUp';
 import ForgotPassword from './Components/ForgotPassword';
 import Protect from './Components/Protect';
 import UserHomePage from './Components/User/UserHomePage';
+import About from './Components/About';
+import Contact from './Components/Contact';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Routes>
         <Route path='/*' element={<PageNotFound/>}/>
           <Route path='/' element={<LandingPage/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
 
           {/* admin links */}
           <Route path='/adminlogin' element={<AdminLoginPage/>}/>

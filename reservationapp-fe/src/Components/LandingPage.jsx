@@ -7,6 +7,19 @@ const LandingPage = () => {
     return (
         <div className="content">
 
+            <nav className="navbar">
+                <ul>
+                    <li><Link to="/" id='home'><b>Home</b></Link></li>
+                    <li><Link to="/adminlogin" className='link'>Admin</Link></li>
+                    <li><Link to="/userlogin" className='link'>User</Link></li>
+                    <li><Link to="/about" className='link'>About</Link></li>
+                    <li><Link to="/contact" className='link' id='contact'>Contact</Link></li>
+                </ul>
+            
+            </nav>
+
+
+
             <h1 className='heading'>Welcome To The Future Of Buses</h1>
 
 
