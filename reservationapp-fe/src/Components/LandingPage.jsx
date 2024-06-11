@@ -5,7 +5,7 @@ import landingbackground from '../Assets/Videos/landingbackground.mp4';
 
 const LandingPage = () => {
     return (
-        <div className="maincontent">
+        <div className="content">
 
             <h1 className='heading'>Welcome To The Future Of Buses</h1>
 

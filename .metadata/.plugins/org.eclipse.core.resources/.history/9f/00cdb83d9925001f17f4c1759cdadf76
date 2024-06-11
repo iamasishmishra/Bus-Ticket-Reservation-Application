@@ -39,7 +39,11 @@ public class UserController {
 		return userService.update(userRequest, id);
 	}
 	
-
+//	@GetMapping("{id}")
+//	public ResponseEntity<ResponseStructure<UserResponse>> saveUser(@PathVariable int id) {
+//		return userService.findUserById(id);
+//	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<ResponseStructure<UserResponse>> findUserById(@PathVariable int id) {
 		
@@ -57,12 +61,6 @@ public class UserController {
 		
 		return userService.verifyUserByEmailAndPassword(email, password);
 	}
-	
-//	@PostMapping("/verify-by-email")
-//	public ResponseEntity<ResponseStructure<UserResponse>> verify(@RequestParam String email,
-//			@RequestParam String password) {
-//		return userService.verify(email, password);
-//	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ResponseStructure<String>> deleteUserById(@PathVariable int id) {

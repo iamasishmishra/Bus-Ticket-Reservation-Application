@@ -1,5 +1,4 @@
-
-.adminsignup {
+/* .adminsignup {
   font-family: 'Helvetica Neue', sans-serif;
   background: linear-gradient(to right, #74ebd5, #ACB6E5);
   display: flex;
@@ -9,44 +8,38 @@
   margin: 0;
 }
 
-/* Container for the admin signup form */
+
 .adminsignup {
   background: #fff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   width: 360px;
-
-  /* height: 300px; */
   position: relative;
-
-  /* width: 180%; */
-
-    position: relative;
-    right: 7%;
+  position: relative;
+  right: 7%;
 }
 
-/* Styling for the form */
 .adminsignup form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-/* Styling for labels */
+
 .adminsignup form label {
   margin-bottom: 8px;
   font-weight: bold;
   color: #555;
 }
 
-/* Styling for input fields */
+
 .adminsignup form input[type="text"],
 .adminsignup form input[type="email"],
 .adminsignup form input[type="tel"],
 .adminsignup form input[type="password"] {
-  padding: 10px; /* Increased padding for better appearance */
-  margin-bottom: 12px; /* Increased margin for better spacing */
+  padding: 10px;
+  margin-bottom: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
@@ -55,7 +48,7 @@
   width: 300px;
 }
 
-/* Change border color on focus */
+
 .adminsignup form input[type="text"]:focus,
 .adminsignup form input[type="email"]:focus,
 .adminsignup form input[type="tel"]:focus,
@@ -64,12 +57,12 @@
   outline: none;
 }
 
-/* Placeholder styling */
+
 .adminsignup form input::placeholder {
   color: #999;
 }
 
-/* Styling for the button */
+
 .adminsignup form button {
   padding: 12px 15px;
   border: none;
@@ -82,14 +75,98 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Change background color on hover */
+
 .adminsignup form button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
 }
 
-/* Active state for the button */
+
 .adminsignup form button:active {
+  background-color: #004494;
+  transform: translateY(0);
+} */
+
+
+
+
+
+
+/* Modern styles for the AdminSignUp component */
+.adminsignup {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.adminsignup .form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  height: 580px;
+}
+
+.adminsignup .form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.adminsignup .form .form-group label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #555;
+}
+
+.adminsignup .form .form-group input[type="text"],
+.adminsignup .form .form-group input[type="email"],
+.adminsignup .form .form-group input[type="tel"],
+.adminsignup .form .form-group input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  width: 100%;
+  height: 30px;
+}
+
+.adminsignup .form .form-group input[type="text"]:focus,
+.adminsignup .form .form-group input[type="email"]:focus,
+.adminsignup .form .form-group input[type="tel"]:focus,
+.adminsignup .form .form-group input[type="password"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.adminsignup .form .form-group input::placeholder {
+  color: #999;
+}
+
+.adminsignup .form button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.adminsignup .form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.adminsignup .form button:active {
   background-color: #004494;
   transform: translateY(0);
 }

@@ -59,7 +59,7 @@ const ViewBus = () => {
                                 <span className="bus-from">From: <b>{item.from_loc}</b>
                                 </span>
                                 <span className="bus-to">To: <b>{item.to_loc}</b></span>
-                                <span className="bus-date">Departure Date: <b>{item.dod}</b></span>
+                                <span className="bus-date">Departure Date& Time: <b>{item.dod}</b></span>
                                 <span className='seat'>Available Seat: <b>{item.availableSeats}</b></span>
                                 <span className='seat'>Cost Per 1 Seat: <b>{item.costPerSeat}</b></span>
 

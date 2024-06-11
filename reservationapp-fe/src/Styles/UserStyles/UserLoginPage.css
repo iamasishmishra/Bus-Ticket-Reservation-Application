@@ -3,11 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%); */
-    /* background: linear-gradient(135deg, #a1c4fd 10%, #c2e9fb 100%); */
     background: linear-gradient(135deg, #ff9a9e 10%, #fad0c4 100%);
-
-
     font-family: 'Arial', sans-serif;
   }
   
@@ -20,7 +16,7 @@
     object-fit: cover;
   }
   
-  .userloginpage form {
+ .userloginpage form {
     background: white;
     padding: 2rem;
     border-radius: 13px;
@@ -59,7 +55,6 @@
     padding: 0.75rem;
     border: none;
     border-radius: 4px;
-    /* background: #5151e5; */
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -78,4 +73,7 @@
     margin-top: 10px;
     text-align: center;
   }
+
+
+
   

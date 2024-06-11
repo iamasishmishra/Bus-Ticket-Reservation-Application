@@ -5,6 +5,7 @@ import { AdminDashBoard } from './AdminDashBoard'
 import AddBus from './AddBus'
 import ViewBus from './ViewBus'
 import EditBus from './EditBus'
+import BookBus from './BookBus'
 
 const AdminHomePage = () => {
   return (
@@ -16,6 +17,7 @@ const AdminHomePage = () => {
             <Route path='/addbus' element={<AddBus/>}/>
             <Route path='/viewbus' element={<ViewBus/>}/>
             <Route path='/editbus/:id' element={<EditBus/>}/>
+            <Route path='/bookbus/:id' element={<BookBus/>}/>
         </Routes>
 
     </div>

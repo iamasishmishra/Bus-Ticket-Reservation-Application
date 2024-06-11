@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import '../Styles/AddBus.css'
-// import axios from 'axios'
 import axios from 'axios'
-// import addbusbg from '../Assets/Imges/addbusbgimg.jpg'
 
 const AddBus = () => {
     let [name, setname] = useState("")
@@ -55,7 +53,7 @@ const AddBus = () => {
                     </label>
 
                     <label htmlFor="">
-                        Date of Departure: <input type="date" placeholder='Enter the date of departure' required value={dod} onChange={(e) => { setdod(e.target.value) }} />
+                        Date of Departure: <input type="datetime-local" placeholder='Enter the date of departure' required value={dod} onChange={(e) => { setdod(e.target.value) }} />
                     </label>
 
                     <label htmlFor="">

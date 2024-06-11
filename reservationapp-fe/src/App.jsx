@@ -29,6 +29,7 @@ function App() {
           {/* user links */}
           <Route path='/userlogin' element={<UserLoginPage/>}/> 
           <Route path='/usersignup' element={<UserSignUp/>}/>
+          <Route path='/adminhomepage/*' element={<Protect Child={AdminHomePage} />} />
         </Routes>
       </BrowserRouter>
     </div>

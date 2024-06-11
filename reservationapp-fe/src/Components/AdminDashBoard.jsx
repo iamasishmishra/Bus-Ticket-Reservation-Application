@@ -2,7 +2,8 @@ import '../Styles/AdminDashBoard.css'
 import axios from 'axios'
 import '../Styles/ViewBus.css'
 import { useState } from 'react'
-import backgroundVideo from '../Assets/Videos/busadd3.mp4';
+import { useNavigate } from 'react-router-dom'
+// import backgroundVideo from '../Assets/Videos/busadd3.mp4';
 
 export const AdminDashBoard = () => {
 
@@ -25,20 +26,31 @@ export const AdminDashBoard = () => {
       })
   }
 
+  let navigate = useNavigate()
+
+  function editNavigate(id) {
+    navigate(`/adminhomepage/bookbus/${id}`)
+  }
+
   return (
     <div className='admindashboard'>
-      <video autoPlay loop muted className="background-video" >
+      {/* <video autoPlay loop muted className="background-video" >
         <source src={backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
 
 
-      <div className="maincontent">
+      <div className="middle">
 
-        <form action="" onSubmit={searchBus}> 
-          <input type="text" required value={from_loc} onChange={(e) => { setfrom_loc(e.target.value) }} placeholder='Enter the location of Departure' />
-
-          <input type="text" required value={to_loc} onChange={(e) => { setto_loc(e.target.value) }} placeholder='Enter the location of Destination' />
+        <form action="" onSubmit={searchBus}>
+          
+          <label htmlFor="">
+          <input type="text" required value={from_loc} onChange={(e) => { setfrom_loc(e.target.value) }} placeholder='From loc' className='input' />
+          </label>
+          
+          <label htmlFor="">
+          <input type="text" required value={to_loc} onChange={(e) => { setto_loc(e.target.value) }} placeholder='To loc' className='input' />
+          </label>
 
           <input type="date" required value={dod} onChange={(e) => { setdod(e.target.value) }} placeholder='Enter the journey Date' />
 
@@ -56,12 +68,12 @@ export const AdminDashBoard = () => {
               <p>Bus No: {item.bus_number}</p>
               <p className='seats'>Available Seats: <b>{item.availableSeats}</b></p>
               <p className='seats'>Cost per 1 Seat: <b>&#x20B9; {item.costPerSeat}</b></p>
-              <button className='btnseat'>Book Seat</button>
+              <button className='btnseat' onClick={() => { editNavigate(item.id) }}>Book Seat</button>
             </div>
           )
         })}
 
-        <h1>Booking Offers</h1>
+        {/* <h1>Booking Offers</h1> */}
       </div>
 
     </div>

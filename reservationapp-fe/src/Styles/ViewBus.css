@@ -9,7 +9,6 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f4f4f4;
 }
 
 .maincontent {
@@ -18,6 +17,8 @@
     gap: 20px;
     justify-content: center;
     width: 70%;
+    position: relative;
+    left: 10%;
 }
 
 .busdetails {

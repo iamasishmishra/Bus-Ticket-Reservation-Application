@@ -63,7 +63,7 @@ const EditBus = () => {
                 </label>
 
                 <label htmlFor="">
-                    Date of Departure: <input type="date" placeholder='Enter the date of departure' required value={dod} onChange={(e) => { setdod(e.target.value) }} />
+                    Date of Departure: <input type="datetime-local" placeholder='Enter the date of departure' required value={dod} onChange={(e) => { setdod(e.target.value) }} />
                 </label>
 
                 <label htmlFor="">

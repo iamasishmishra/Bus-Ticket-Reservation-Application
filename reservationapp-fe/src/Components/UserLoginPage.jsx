@@ -14,12 +14,14 @@ const UserLoginPage = () => {
 
   function verify(e) {
     e.preventDefault()
-    axios.post(`http://localhost:8080/api/admins/verify-by-email?email=${email}&password=${password}`)
+    axios.post(`http://localhost:8080/api/users/verify-by-email-and-password?email=${email}&password=${password}`)
       .then((res) => {
+        console.log(res);
         navigate('/userhomepage')
         alert("Login Successful")
       })
       .catch((err) => {
+        console.log(err);
         alert("Invalid Email id or password")
       })
 
@@ -45,6 +47,7 @@ const UserLoginPage = () => {
 
         <p>New User? <Link to="/usersignup">Register here</Link></p>
 
+        <p><Link to="/usersignup">forgot password?</Link></p>
       </form>
 
     </div>

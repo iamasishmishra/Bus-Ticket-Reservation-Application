@@ -58,12 +58,6 @@ public class UserController {
 		return userService.verifyUserByEmailAndPassword(email, password);
 	}
 	
-//	@PostMapping("/verify-by-email")
-//	public ResponseEntity<ResponseStructure<UserResponse>> verify(@RequestParam String email,
-//			@RequestParam String password) {
-//		return userService.verify(email, password);
-//	}
-	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ResponseStructure<String>> deleteUserById(@PathVariable int id) {
 		
