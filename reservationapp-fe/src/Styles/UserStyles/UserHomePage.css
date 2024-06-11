@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.userhomepage {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.userhomepage .bgimg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.userhomepage .bgimg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../Assets/Imges/userbusbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    z-index: -1;
+}
+
+.userhomepage .bgimg img {
+    display: none;
+}
+
+.drop {
+    position: relative;
+    right: 40px;
+    bottom: 7px;
+}

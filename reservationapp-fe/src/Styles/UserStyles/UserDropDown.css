@@ -1,0 +1,116 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.navbar li {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+}
+
+.drop {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-basic-button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#dropdown-basic-button:focus,
+#dropdown-basic-button:hover {
+    background-color: rgb(49, 46, 46);
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: white;
+    color: black;
+}
+
+/* UserHomePage Styles */
+.userhomepage {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.userhomepage .bgimg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.userhomepage .bgimg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../Assets/Imges/userbusbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    z-index: -1;
+}
+
+.userhomepage .bgimg img {
+    display: none;
+}
