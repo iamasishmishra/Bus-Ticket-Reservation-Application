@@ -12,11 +12,11 @@ const UserLoginPage = () => {
 
   let navigate = useNavigate()
 
-  function verify(e) {
+  function verifyUser(e) {
     e.preventDefault()
     axios.post(`http://localhost:8080/api/users/verify-by-email-and-password?email=${email}&password=${password}`)
       .then((res) => {
-        console.log(res);
+        console.log(res.data.data);
         navigate('/userhomepage')
         alert("Login Successful")
       })
@@ -35,7 +35,7 @@ const UserLoginPage = () => {
       </div>
 
 
-      <form onSubmit={verify} action="">
+      <form onSubmit={verifyUser} action="">
 
         <label htmlFor="">Email</label>
         <input type="email" placeholder='Email' required value={email} onChange={(e) => { setemail(e.target.value) }} />

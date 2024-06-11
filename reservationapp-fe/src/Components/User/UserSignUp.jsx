@@ -42,16 +42,6 @@ const UserSignUp = () => {
         <label htmlFor="">Age:</label>
         <input type="number" placeholder='Enter your Age' required value={age} onChange={(e) => { setage(e.target.value) }} />
 
-        {/*<label htmlFor="">Gender:</label>
-         <div className="gender-group">
-          <input type="radio" id="male" name="gender"  required onChange={(e) => setgender(e.target.value)} />
-          <label htmlFor="male">Male</label>
-          <input type="radio" id="female" name="gender"  required onChange={(e) => setgender(e.target.value)} />
-          <label htmlFor="female">Female</label>
-          <input type="radio" id="transgender" name="gender"  required onChange={(e) => setgender(e.target.value)} />
-          <label htmlFor="transgender">Transgender</label>
-        </div> */}
-
         <label htmlFor="">Gender:</label>
         <input type="text" placeholder='Enter your Gender' required value={gender} onChange={(e) => { setgender(e.target.value) }} />
 

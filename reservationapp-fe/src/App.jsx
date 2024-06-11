@@ -9,6 +9,7 @@ import PageNotFound from './Components/PageNotFound';
 import UserSignUp from './Components/User/UserSignUp';
 import ForgotPassword from './Components/ForgotPassword';
 import Protect from './Components/Protect';
+import UserHomePage from './Components/User/UserHomePage';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
           {/* user links */}
           <Route path='/userlogin' element={<UserLoginPage/>}/> 
           <Route path='/usersignup' element={<UserSignUp/>}/>
-          <Route path='/adminhomepage/*' element={<Protect Child={AdminHomePage} />} />
+          <Route path='/userhomepage/*' element={<Protect Child={UserHomePage} />} />
         </Routes>
       </BrowserRouter>
     </div>
