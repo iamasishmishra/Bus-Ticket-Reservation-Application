@@ -1,0 +1,115 @@
+
+.usersearchbus form {
+    background-color: black !important;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 7%;
+    margin-left: 18%;
+    align-items: center;
+  }
+  
+  .usersearchbus form .label {
+    flex: 1;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .usersearchbus form .input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    width: 500px;
+    background-color: black;
+    border: 2px solid rgb(24, 24, 24);
+    color: white; /* Text color */
+  }
+  
+  .usersearchbus form input[type="date"] {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    color: black; /* Text color */
+  }
+  
+  .usersearchbus form .input:hover,
+  .usersearchbus form input[type="date"]:hover {
+    border-color: #45a049; /* Hover effect */
+  }
+  
+  .usersearchbus form button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation: pulse 0.5s infinite ease-in-out;
+    box-shadow: 0 0 0 3px rgba(76, 160, 73, 0.3); /* Initial subtle glow */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .usersearchbus form button:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 5px 3px rgba(235, 8, 8, 0.8); /* Increased glow on hover */
+  }
+
+
+  .userbuslist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 85%;
+    margin-left: 7%;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #2a2929;
+    border-radius: 10px;
+    background-color: #222; /* Background color */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userbuslist:hover {
+    background-color: #333; /* Darken background color on hover */
+  }
+  
+  .userbuslist h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .userbuslist p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .userbuslist button {
+    padding: 10px 20px;
+    background-color: green;
+    border: 2px solid transparent;
+    border-radius: 10px ;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color green; 
+  }
+  
+  .userbuslist button:hover {
+    background-color: rgb(7, 198, 7); /* Change background color on hover */
+    color: white; /* Change text color on hover */
+  }

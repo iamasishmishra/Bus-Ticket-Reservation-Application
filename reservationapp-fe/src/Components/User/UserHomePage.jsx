@@ -1,8 +1,10 @@
 import React from 'react'
-import bgimg from '../../Assets/Imges/userbusbg.jpg'
+// import bgimg from '../../Assets/Imges/userbusbg.jpg'
 import '../../Styles/UserStyles/UserHomePage.css'
 import { Link } from 'react-router-dom'
 import UserDropDown from './UserDropDown'
+import UserDashBoard from './UserDashBoard'
+import { Routes, Route } from 'react-router-dom'
 
 const UserHomePage = () => {
   return (
@@ -20,9 +22,15 @@ const UserHomePage = () => {
         </div>
       </nav>
 
-      <div className="bgimg">
+      {/* <div className="bgimg">
         <img src={bgimg} alt="" />
-      </div>
+      </div> */}
+
+
+        <Routes>
+          <Route path='/' element={<UserDashBoard />} />
+        </Routes>
+      
     </div>
   )
 }
