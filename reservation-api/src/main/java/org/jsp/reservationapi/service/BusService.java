@@ -106,6 +106,7 @@ public class BusService {
 		dbBus.setNo_of_seats(busRequest.getNo_of_seats());
 		dbBus.setName(busRequest.getName());
 		dbBus.setCostPerSeat(busRequest.getCostPerSeat()); 
+		
 		dbBus.setAvailableSeats(busRequest.getNo_of_seats());
 		dbBus = busDao.saveBus(dbBus);
 		structure.setData(dbBus);
@@ -250,10 +251,25 @@ public class BusService {
 	}
 	
 
-	private BusResponse mapToBusResponse(Bus bus) {
-		return BusResponse.builder().id(bus.getId()).name(bus.getName()).bus_number(bus.getBus_number())
-				.dod(bus.getDod()).from_loc(bus.getFrom_loc()).to_loc(bus.getTo_loc())
-				.no_of_seats(bus.getNo_of_seats()).build();
-	}
+//	private BusResponse mapToBusResponse(Bus bus) {
+//		return BusResponse.builder().id(bus.getId()).name(bus.getName()).bus_number(bus.getBus_number())
+//				.dod(bus.getDod()).from_loc(bus.getFrom_loc()).to_loc(bus.getTo_loc())
+//				.no_of_seats(bus.getNo_of_seats()).build();
+//	}
+	
+	 // Change: Added availableSeats and costPerSeat fields in the response
+    private BusResponse mapToBusResponse(Bus bus) {
+        return BusResponse.builder()
+                .id(bus.getId())
+                .name(bus.getName())
+                .bus_number(bus.getBus_number())
+                .dod(bus.getDod())
+                .from_loc(bus.getFrom_loc())
+                .to_loc(bus.getTo_loc())
+                .no_of_seats(bus.getNo_of_seats())
+                .availableSeats(bus.getAvailableSeats())  // Change: Added this line
+                .costPerSeat(bus.getCostPerSeat())        // Change: Added this line
+                .build();
+    }
 
 }

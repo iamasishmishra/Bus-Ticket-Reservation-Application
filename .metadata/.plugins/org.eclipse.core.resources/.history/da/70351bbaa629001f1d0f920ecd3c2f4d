@@ -20,9 +20,5 @@ public class BusResponse {
 	private LocalDate dod;
 	private String from_loc;
 	private String to_loc;
-	
-	
-	private int availableSeats; // Add this field
-	private double costPerSeat;
 
 }

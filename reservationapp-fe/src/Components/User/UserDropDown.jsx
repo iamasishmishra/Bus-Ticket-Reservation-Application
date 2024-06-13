@@ -12,7 +12,6 @@ const UserDropDown = () => {
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" title="Account">
-                <Dropdown.Item href="/userhomepage/viewbus">Bus List</Dropdown.Item>
                 <Dropdown.Item href="/userhomepage/editprofile">Edit Profile</Dropdown.Item>
                 <Dropdown.Item onClick={handleLogout}>Log Out</Dropdown.Item>
             </DropdownButton>

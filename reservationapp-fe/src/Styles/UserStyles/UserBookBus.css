@@ -1,0 +1,107 @@
+.card {
+    width: 300px;
+    /* height: auto; */
+    height: 490px;
+    background: #07182E;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    color: white;
+    z-index: 0; /* Ensure the card has a lower z-index */
+    position: relative;
+    top: 13%;
+    left: 37%;
+}
+
+.card-content {
+    z-index: 2; /* Ensure content has a higher z-index */
+    position: relative; /* Position relative to keep it above pseudo-elements */
+}
+
+.card h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: white;
+    margin: 5px 0;
+}
+
+.card select {
+    background: #07182E;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.userbookbusbtn {
+    background: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    z-index: 1; /* Ensure pseudo-element has a lower z-index */
+}
+
+.card-content span{
+    color: green;
+}
+
+.cost {
+    font-weight: bold;
+  }
+  
+  #costValue {
+    animation: cost-animation infinite alternate 1s ease-in-out;
+  }
+  
+  @keyframes cost-animation {
+    from {
+      opacity: 0;
+      font-size: 1em;
+    }
+    to {
+      opacity: 1;
+      font-size: 16px;
+      color: yellow;
+    }
+  }
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    inset: 5px;
+    border-radius: 15px;
+    z-index: 1; /* Ensure pseudo-element has a lower z-index */
+}

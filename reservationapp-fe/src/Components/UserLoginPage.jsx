@@ -47,7 +47,7 @@ const UserLoginPage = () => {
 
         <p>New User? <Link to="/usersignup">Register here</Link></p>
 
-        <p><Link to="/usersignup">forgot password?</Link></p>
+        <p><Link to="/forgot-password">forgot password?</Link></p>
       </form>
 
     </div>

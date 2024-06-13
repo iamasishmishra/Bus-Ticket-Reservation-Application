@@ -27,9 +27,8 @@ const UserDashBoard = () => {
     let navigate = useNavigate()
 
     function editNavigate(id) {
-        navigate(`/userhomepage/bookbus/${id}`)
+        navigate(`/userhomepage/userbookbus/${id}`)
     }
-
 
     const buttonStyle = {
         '--clr': '#39FF14'

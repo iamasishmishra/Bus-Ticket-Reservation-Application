@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import UserDropDown from './UserDropDown'
 import UserDashBoard from './UserDashBoard'
 import { Routes, Route } from 'react-router-dom'
+import UserBookBus from './UserBookBus'
 
 const UserHomePage = () => {
   return (
@@ -29,6 +30,7 @@ const UserHomePage = () => {
 
         <Routes>
           <Route path='/' element={<UserDashBoard />} />
+          <Route path='/userbookbus/:id' element={<UserBookBus/>}/>
         </Routes>
       
     </div>

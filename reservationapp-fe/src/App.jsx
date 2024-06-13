@@ -33,6 +33,7 @@ function App() {
 
           {/* user links */}
           <Route path='/userlogin' element={<UserLoginPage/>}/> 
+          <Route path='/forgot-password' element={<ForgotPassword/>}/>
           <Route path='/usersignup' element={<UserSignUp/>}/>
           <Route path='/userhomepage/*' element={<Protect Child={UserHomePage} />} />
         </Routes>

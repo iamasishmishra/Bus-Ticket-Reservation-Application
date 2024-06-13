@@ -13,6 +13,7 @@ import org.jsp.reservationapi.exception.AdminNotFoundException;
 import org.jsp.reservationapi.exception.BusNotFoundException;
 import org.jsp.reservationapi.model.Admin;
 import org.jsp.reservationapi.model.Bus;
+import org.jsp.reservationapi.repository.BusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,9 @@ public class BusService {
 	private BusDao busDao;
 	@Autowired
 	private AdminDao adminDao;
+	
+	@Autowired
+    private BusRepository busRepository;
 
 //	public ResponseEntity<ResponseStructure<BusResponse>> saveBus(BusRequest busRequest, int id) {
 //		ResponseStructure<BusResponse> structure = new ResponseStructure<>();
@@ -52,7 +56,7 @@ public class BusService {
 		ResponseStructure<Bus> structure = new ResponseStructure<>();
 		if (recAdmin.isPresent()) {
 			Bus bus = mapToBus(busRequest);
-			bus.setAvailableSeats(bus.getAvailableSeats());
+			bus.setAvailableSeats(bus.getNo_of_seats());
 			bus.setAdmin(recAdmin.get());
 			recAdmin.get().getBuses().add(bus);
 			adminDao.saveAdmin(recAdmin.get());
@@ -195,23 +199,54 @@ public class BusService {
 	}
 	
 	
+//	public ResponseEntity<ResponseStructure<List<Bus>>> findBuses(String from_loc, String to_loc, LocalDateTime dod) {
+//		ResponseStructure<List<Bus>> structure = new ResponseStructure<>();
+//		List<Bus> buses = busDao.findBuses(from_loc, to_loc, dod);
+//		if (buses.isEmpty())
+//			throw new BusNotFoundException("No Buses for entered route on this Date");
+//		structure.setData(buses);
+//		structure.setMessage("List of Buses for entered route on this Date");
+//		structure.setStatusCode(HttpStatus.OK.value());
+//		return ResponseEntity.status(HttpStatus.OK).body(structure);
+//	}
+	
 	public ResponseEntity<ResponseStructure<List<Bus>>> findBuses(String from_loc, String to_loc, LocalDate dod) {
-		ResponseStructure<List<Bus>> structure = new ResponseStructure<>();
-		List<Bus> buses = busDao.findBuses(from_loc, to_loc, dod);
-		if (buses.isEmpty())
-			throw new BusNotFoundException("No Buses for entered route on this Date");
-		structure.setData(buses);
-		structure.setMessage("List of Buses for entered route on this Date");
-		structure.setStatusCode(HttpStatus.OK.value());
-		return ResponseEntity.status(HttpStatus.OK).body(structure);
-	}
+        ResponseStructure<List<Bus>> structure = new ResponseStructure<>();
+        List<Bus> buses = busRepository.findBuses(from_loc, to_loc, dod);
+        if (buses.isEmpty()) {
+            throw new BusNotFoundException("No Buses for entered route on this Date");
+        }
+        structure.setData(buses);
+        structure.setMessage("List of Buses for entered route on this Date");
+        structure.setStatusCode(HttpStatus.OK.value());
+        return ResponseEntity.status(HttpStatus.OK).body(structure);
+    }
 
 	
 	
-	private Bus mapToBus(BusRequest busRequest) {
-		return Bus.builder().name(busRequest.getName()).bus_number(busRequest.getBus_number()).dod(busRequest.getDod())
-				.from_loc(busRequest.getFrom_loc()).to_loc(busRequest.getTo_loc())
-				.no_of_seats(busRequest.getNo_of_seats()).build();
+//	private Bus mapToBus(BusRequest busRequest) {
+//		return Bus.builder().name(busRequest.getName()).bus_number(busRequest.getBus_number()).dod(busRequest.getDod())
+//				.from_loc(busRequest.getFrom_loc()).to_loc(busRequest.getTo_loc())
+//				.no_of_seats(busRequest.getNo_of_seats()).build();
+//	}
+	
+//	public Bus mapToBus(BusRequest busRequest) {
+//		return Bus.builder().name(busRequest.getName()).bus_number(busRequest.getBus_number())
+//				.dod(busRequest.getDod()).from_loc(busRequest.getFrom_loc()).to_loc(busRequest.getTo_loc())
+//				.no_of_seats(busRequest.getNo_of_seats()).costPerSeat(busRequest.getCostPerSeat()).build();
+//	}
+	
+	public Bus mapToBus(BusRequest busRequest) {
+	    return Bus.builder()
+	            .name(busRequest.getName())
+	            .bus_number(busRequest.getBus_number())
+	            .dod(busRequest.getDod())
+	            .from_loc(busRequest.getFrom_loc())
+	            .to_loc(busRequest.getTo_loc())
+	            .no_of_seats(busRequest.getNo_of_seats())
+	            .availableSeats(busRequest.getNo_of_seats())  // Set initial available seats
+	            .costPerSeat(busRequest.getCostPerSeat())
+	            .build();
 	}
 	
 
