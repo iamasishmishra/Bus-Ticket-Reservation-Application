@@ -18,8 +18,6 @@ const LandingPage = () => {
             
             </nav>
 
-
-
             <h1 className='heading'>Welcome To The Future Of Buses</h1>
 
 

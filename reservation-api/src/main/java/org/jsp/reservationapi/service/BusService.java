@@ -30,26 +30,6 @@ public class BusService {
 	@Autowired
     private BusRepository busRepository;
 
-//	public ResponseEntity<ResponseStructure<BusResponse>> saveBus(BusRequest busRequest, int id) {
-//		ResponseStructure<BusResponse> structure = new ResponseStructure<>();
-//		Optional<Admin> recAdmin = adminDao.findById(id);
-//
-//		if (recAdmin.isPresent()) {
-//			Admin admin = recAdmin.get();
-//			Bus bus = mapToBus(busRequest);
-//			bus.setAdmin(admin); 
-//			admin.getBuses().add(bus); 
-//
-//			adminDao.saveAdmin(admin); 
-//
-//			structure.setMessage("Bus saved");
-//			structure.setData(mapToBusResponse(busDao.saveBus(bus)));
-//			structure.setStatusCode(HttpStatus.CREATED.value());
-//
-//			return ResponseEntity.status(HttpStatus.CREATED).body(structure);
-//		}
-//		throw new AdminNotFoundException("Cannot saved Bus as Admin Id is invalid");
-//	}
 	
 	public ResponseEntity<ResponseStructure<Bus>> saveBus(BusRequest busRequest, int admin_id) {
 		Optional<Admin> recAdmin = adminDao.findById(admin_id);
@@ -69,28 +49,6 @@ public class BusService {
 		throw new AdminNotFoundException("Cannot Add Bus as Admin Id is Invalid");
 	}
 
-	
-//	public ResponseEntity<ResponseStructure<BusResponse>> updateBus(BusRequest busRequest, int id) {
-//		ResponseStructure<BusResponse> structure = new ResponseStructure<>();
-//		Optional<Bus> recBus = busDao.findById(id);
-//
-//		if (recBus.isPresent()) {
-//			Bus dbBus = recBus.get();
-//			dbBus.setBus_number(busRequest.getBus_number());
-//			dbBus.setDod(busRequest.getDod());
-//			dbBus.setFrom_loc(busRequest.getFrom_loc());
-//			dbBus.setName(busRequest.getName());
-//			dbBus.setNo_of_seats(busRequest.getNo_of_seats());
-//			dbBus.setTo_loc(busRequest.getTo_loc());
-//
-//			structure.setData(mapToBusResponse(busDao.saveBus(dbBus)));
-//			structure.setMessage("Bus updated");
-//			structure.setStatusCode(HttpStatus.ACCEPTED.value());
-//
-//			return ResponseEntity.status(HttpStatus.ACCEPTED).body(structure);
-//		}
-//		throw new BusNotFoundException("Cannot update Bus as Id is Invalid");
-//	}
 
 	
 	public ResponseEntity<ResponseStructure<Bus>> updateBus(BusRequest busRequest, int id) {
@@ -129,18 +87,6 @@ public class BusService {
 		}
 		throw new BusNotFoundException("Invalid Bus Id");
 	}
-	
-//	
-//	public ResponseEntity<ResponseStructure<Bus>> findById(int id) {
-//		ResponseStructure<Bus> structure = new ResponseStructure<>();
-//		Optional<Bus> recBus = busDao.findById(id);
-//		if (recBus.isEmpty())
-//			throw new BusNotFoundException("Invalid Bus id");
-//		structure.setData(recBus.get());
-//		structure.setMessage("Bus Found");
-//		structure.setStatusCode(HttpStatus.OK.value());
-//		return ResponseEntity.status(HttpStatus.OK).body(structure);
-//	}
 	
 
 	public ResponseEntity<ResponseStructure<BusResponse>> findBusByBusNumber(String bus_number) {
@@ -200,17 +146,6 @@ public class BusService {
 	}
 	
 	
-//	public ResponseEntity<ResponseStructure<List<Bus>>> findBuses(String from_loc, String to_loc, LocalDateTime dod) {
-//		ResponseStructure<List<Bus>> structure = new ResponseStructure<>();
-//		List<Bus> buses = busDao.findBuses(from_loc, to_loc, dod);
-//		if (buses.isEmpty())
-//			throw new BusNotFoundException("No Buses for entered route on this Date");
-//		structure.setData(buses);
-//		structure.setMessage("List of Buses for entered route on this Date");
-//		structure.setStatusCode(HttpStatus.OK.value());
-//		return ResponseEntity.status(HttpStatus.OK).body(structure);
-//	}
-	
 	public ResponseEntity<ResponseStructure<List<Bus>>> findBuses(String from_loc, String to_loc, LocalDate dod) {
         ResponseStructure<List<Bus>> structure = new ResponseStructure<>();
         List<Bus> buses = busRepository.findBuses(from_loc, to_loc, dod);
@@ -224,19 +159,6 @@ public class BusService {
     }
 
 	
-	
-//	private Bus mapToBus(BusRequest busRequest) {
-//		return Bus.builder().name(busRequest.getName()).bus_number(busRequest.getBus_number()).dod(busRequest.getDod())
-//				.from_loc(busRequest.getFrom_loc()).to_loc(busRequest.getTo_loc())
-//				.no_of_seats(busRequest.getNo_of_seats()).build();
-//	}
-	
-//	public Bus mapToBus(BusRequest busRequest) {
-//		return Bus.builder().name(busRequest.getName()).bus_number(busRequest.getBus_number())
-//				.dod(busRequest.getDod()).from_loc(busRequest.getFrom_loc()).to_loc(busRequest.getTo_loc())
-//				.no_of_seats(busRequest.getNo_of_seats()).costPerSeat(busRequest.getCostPerSeat()).build();
-//	}
-	
 	public Bus mapToBus(BusRequest busRequest) {
 	    return Bus.builder()
 	            .name(busRequest.getName())
@@ -245,7 +167,7 @@ public class BusService {
 	            .from_loc(busRequest.getFrom_loc())
 	            .to_loc(busRequest.getTo_loc())
 	            .no_of_seats(busRequest.getNo_of_seats())
-	            .availableSeats(busRequest.getNo_of_seats())  // Set initial available seats
+	            .availableSeats(busRequest.getNo_of_seats())  
 	            .costPerSeat(busRequest.getCostPerSeat())
 	            .build();
 	}
@@ -257,7 +179,7 @@ public class BusService {
 //				.no_of_seats(bus.getNo_of_seats()).build();
 //	}
 	
-	 // Change: Added availableSeats and costPerSeat fields in the response
+
     private BusResponse mapToBusResponse(Bus bus) {
         return BusResponse.builder()
                 .id(bus.getId())
@@ -267,8 +189,8 @@ public class BusService {
                 .from_loc(bus.getFrom_loc())
                 .to_loc(bus.getTo_loc())
                 .no_of_seats(bus.getNo_of_seats())
-                .availableSeats(bus.getAvailableSeats())  // Change: Added this line
-                .costPerSeat(bus.getCostPerSeat())        // Change: Added this line
+                .availableSeats(bus.getAvailableSeats())  
+                .costPerSeat(bus.getCostPerSeat())        
                 .build();
     }
 

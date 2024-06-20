@@ -41,8 +41,6 @@ public class AdminDao {
 	
 	public Optional<Admin> findByToken(String token) {
 		return adminRepository.findByToken(token);
-	}
-	
-	
+	}	
 	
 }

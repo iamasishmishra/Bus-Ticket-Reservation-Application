@@ -6,6 +6,7 @@ import UserDropDown from './UserDropDown'
 import UserDashBoard from './UserDashBoard'
 import { Routes, Route } from 'react-router-dom'
 import UserBookBus from './UserBookBus'
+import BookingConfirmation from './BookingConfirmation'
 
 const UserHomePage = () => {
   return (
@@ -23,14 +24,10 @@ const UserHomePage = () => {
         </div>
       </nav>
 
-      {/* <div className="bgimg">
-        <img src={bgimg} alt="" />
-      </div> */}
-
-
         <Routes>
           <Route path='/' element={<UserDashBoard />} />
           <Route path='/userbookbus/:id' element={<UserBookBus/>}/>
+          <Route path='/booking-confirmation/:ticketId' element={<BookingConfirmation />} />
         </Routes>
       
     </div>

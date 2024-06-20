@@ -1,0 +1,17 @@
+.bookingconfirmation {
+    color: white;
+    background-color: black; 
+    padding: 20px; 
+    border-radius: 10px; 
+    max-width: 600px; 
+    margin: 20px auto; 
+}
+
+.booking-details p {
+    margin: 10px 0; 
+}
+
+
+.bookingconfirmation h1{
+    color: white;
+}

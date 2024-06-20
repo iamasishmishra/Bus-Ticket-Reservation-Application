@@ -76,7 +76,6 @@ public class AdminController {
     
     @GetMapping("/verify-link")
     public void verifyResetPasswordLink(@RequestParam String token, HttpServletResponse response) {
-//    	return adminService.verifyLink(token);
     	
     	AdminResponse adminResponse = adminService.verifyLink(token);
     	if(adminResponse!=null) {

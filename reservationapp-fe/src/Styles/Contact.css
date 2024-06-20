@@ -44,12 +44,11 @@ body {
     color: #000;
 }
 
-/* Contact Us Page Styles */
 .contact-us {
     font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
-    padding-top: 70px; /* Adjust to ensure it doesn't overlap with the fixed navbar */
+    padding-top: 70px; 
 }
 
 .contact-banner {

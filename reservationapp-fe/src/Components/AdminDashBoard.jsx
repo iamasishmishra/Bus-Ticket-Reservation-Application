@@ -3,7 +3,6 @@ import axios from 'axios'
 import '../Styles/ViewBus.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import backgroundVideo from '../Assets/Videos/busadd3.mp4';
 
 export const AdminDashBoard = () => {
 
@@ -16,7 +15,6 @@ export const AdminDashBoard = () => {
   function searchBus(e) {
     e.preventDefault();
     axios.get(`http://localhost:8080/api/buses/find?from_loc=${from_loc}&to_loc=${to_loc}&dod=${dod}`)
-      // http://localhost:8080/api/buses/find?from_loc=Bengaluru&to_loc=Udupi&dod=2024-06-14
       .then((res) => {
         console.log(res.data.data);
         setbuses(res.data.data);
@@ -34,11 +32,6 @@ export const AdminDashBoard = () => {
 
   return (
     <div className='admindashboard'>
-      {/* <video autoPlay loop muted className="background-video" >
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-
 
       <div className="middle">
 
@@ -73,7 +66,6 @@ export const AdminDashBoard = () => {
           )
         })}
 
-        {/* <h1>Booking Offers</h1> */}
       </div>
 
     </div>

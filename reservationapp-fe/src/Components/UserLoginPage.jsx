@@ -16,9 +16,14 @@ const UserLoginPage = () => {
     e.preventDefault()
     axios.post(`http://localhost:8080/api/users/verify-by-email-and-password?email=${email}&password=${password}`)
       .then((res) => {
-        console.log(res.data.data);
-        navigate('/userhomepage')
-        alert("Login Successful")
+        console.log(res.data);
+        if (res.data.data && res.data.data.id) {
+          localStorage.setItem('userId', res.data.data.id); // Store userId in localStorage
+          navigate('/userhomepage');
+          alert("Login Successful");
+        } else {
+          alert("Invalid response from server");
+        }
       })
       .catch((err) => {
         console.log(err);

@@ -1,7 +1,6 @@
 .card {
     width: 300px;
-    /* height: auto; */
-    height: 490px;
+    height: 470px;
     background: #07182E;
     position: relative;
     display: flex;
@@ -12,15 +11,16 @@
     overflow: hidden;
     border-radius: 20px;
     color: white;
-    z-index: 0; /* Ensure the card has a lower z-index */
+    z-index: 0; 
     position: relative;
     top: 13%;
     left: 37%;
 }
 
 .card-content {
-    z-index: 2; /* Ensure content has a higher z-index */
-    position: relative; /* Position relative to keep it above pseudo-elements */
+    z-index: 2; 
+    position: relative; 
+
 }
 
 .card h3 {
@@ -61,7 +61,7 @@
     height: 130%;
     animation: rotBGimg 3s linear infinite;
     transition: all 0.2s linear;
-    z-index: 1; /* Ensure pseudo-element has a lower z-index */
+    z-index: 1; 
 }
 
 .card-content span{
@@ -103,5 +103,9 @@
     background: #07182E;
     inset: 5px;
     border-radius: 15px;
-    z-index: 1; /* Ensure pseudo-element has a lower z-index */
+    z-index: 1; 
+}
+
+.card .note p{
+    color: red;
 }
